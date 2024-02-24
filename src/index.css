@@ -1,13 +1,61 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  font-family: "Noto Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 33px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components{
+  .wrapper{
+    @apply flex justify-center;
+  }
+
+  .container {
+    @apply max-w-[1440px]  px-[16px] md:px-[48px] lg:px-[100px];
+  }
+
+  .clickable{
+    @apply cursor-pointer hover:opacity-80
+  }
+
+  .text-h1{
+    @apply font-bold text-[38px] leading-[45px] lg:text-[58px] lg:leading-[85px] font-noto
+  }
+  .text-h2{
+    @apply font-bold text-[34px] leading-[46px] lg:text-[54px] lg:leading-[73px] font-noto
+  }
+
+  .text-20-to-24{
+    @apply text-[20px] lg:text-[24px] leading-[27px] lg:leading-[32px]
+  }
+  .text-18-to-24{
+    @apply text-[18px] lg:text-[24px] leading-[24px] lg:leading-[32px]
+  }
+
+  .text-14-to-18{
+    @apply text-[14px] lg:text-[18px] leading-[19px] lg:leading-[24px] font-normal
+  }
+
+  .btn-primary{
+    @apply flex gap-[10px] py-2 px-[14px] rounded-[2px] clickable;
+    box-shadow: 2px 2px 0px 0px #47B2E4;
+  }
+
+  .nav-shadow{
+    box-shadow: 0px 4px 0px 0px #01B3BF;
+
+    box-shadow: 0px 12px 14px 0px #0F474B26;
+
+  }
+}
+
+
+.nav-gradient{
+  background: linear-gradient(180deg, rgba(9, 16, 27, 0.85) 0%, rgba(9, 16, 27, 0) 100%);
 }
