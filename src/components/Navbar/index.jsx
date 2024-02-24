@@ -3,11 +3,11 @@ import React from "react";
 const Navbar = () => {
   return (
     <>
-      <section className="fixed top-0 w-full hidden md:block  z-10 nav-gradient h-[188px]">
+      <section className="fixed top-0 w-full hidden md:block  z-[99] nav-gradient h-[188px]">
         <div className="wrapper">
           <div className="container ">
             <div className="flex justify-end">
-              <div className=" fixed left-3 hidden md:block">
+              <div className=" fixed z-[99] left-3 hidden md:block">
                 <img src="/images/badge-lg.png" alt="badge" />
               </div>
               <div className="py-[14px] flex gap-3 bg">
@@ -20,10 +20,16 @@ const Navbar = () => {
                 <p className="py-2 px-4 text-white clickable text-[1rem]">
                   Service
                 </p>
-                <button className="btn-primary bg-white items-center h-fit">
-                  <img src="/images/svg/plane.svg" alt="plane icon" />
-                  <span className="p-1 border-r border-[#C4CFE2] h-full"></span>
-                  <span className="text-primary text-[1rem]">Contact</span>
+                <button className="btn-primary bg-white items-center h-fit ">
+                  <img
+                    src="/images/svg/plane.svg"
+                    alt="plane icon"
+                    className="pr-[18px]"
+                  />
+
+                  <span className="text-primary text-[1rem] pl-[18px] border-l border-[#C4CFE2]">
+                    Contact
+                  </span>
                 </button>
               </div>
             </div>
@@ -33,7 +39,7 @@ const Navbar = () => {
 
       {/* mobile */}
 
-      <section className="flex w-full fixed top-0 md:hidden">
+      <section className="flex w-full fixed z-[99] top-0 md:hidden">
         <img
           src="/images/nav-badges.png"
           alt="nav"

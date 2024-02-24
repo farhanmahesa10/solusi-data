@@ -30,7 +30,7 @@ const Hero = () => {
           </div>
         </div>
       </section>
-      <div className="">
+      <div className="relative top-[1px]">
         <Client />
       </div>
     </div>
