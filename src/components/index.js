@@ -5,4 +5,6 @@ import About from "./Sections/About";
 import HowItWorks from "./Sections/HowItWorks";
 import Service from "./Sections/Service";
 import CTA from "./Sections/CTA";
-export { CTA, Service, About, Hero, Navbar, Client, HowItWorks };
+import GIC from "./Sections/GIC";
+import Footer from "./Sections/Footer";
+export { Footer, GIC, CTA, Service, About, Hero, Navbar, Client, HowItWorks };

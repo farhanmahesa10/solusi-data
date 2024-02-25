@@ -2,11 +2,11 @@ import React from "react";
 
 const CTA = () => {
   return (
-    <div className="wrapper ">
-      <div
-        className="container bg-no-repeat bg-cover bg-left pt-[224px] pb-[206px]"
-        style={{ backgroundImage: "url('/images/cta-bg.png')" }}
-      >
+    <div
+      className="wrapper bg-no-repeat bg-cover bg-left-top"
+      style={{ backgroundImage: "url('/images/cta-bg.png')" }}
+    >
+      <div className="container  bg-left pt-[224px] pb-[206px]">
         <h2 className="text-h2 text-action lg:text-[42px]">
           Let's start building together
         </h2>

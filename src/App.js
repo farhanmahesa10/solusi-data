@@ -1,5 +1,14 @@
 import React from "react";
-import { About, CTA, Hero, HowItWorks, Navbar, Service } from "./components";
+import {
+  About,
+  CTA,
+  Footer,
+  GIC,
+  Hero,
+  HowItWorks,
+  Navbar,
+  Service,
+} from "./components";
 function App() {
   return (
     <>
@@ -9,6 +18,8 @@ function App() {
       <HowItWorks />
       <Service />
       <CTA />
+      <GIC />
+      <Footer />
     </>
   );
 }

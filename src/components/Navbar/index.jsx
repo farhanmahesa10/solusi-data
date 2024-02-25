@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
   return (
     <>
       <section className="fixed top-0 w-full hidden md:block  z-[99] nav-gradient h-[188px]">
@@ -39,24 +40,67 @@ const Navbar = () => {
 
       {/* mobile */}
 
-      <section className="flex w-full fixed z-[99] top-0 md:hidden">
-        <img
-          src="/images/nav-badges.png"
-          alt="nav"
-          className="h-[153px] flex-grow-0 flex-shrink-0"
-        />
-        <img
-          src="/images/nav-line.png"
-          alt="nav"
-          className="h-[153px] w-full "
-        />
+      <section className=" w-full fixed z-[99] top-0 md:hidden ">
+        <div
+          className={`w-screen flex flex-col overflow-hidden transition-all duration-500 gap-3 bg-[#09101B] relative z-[50] ${
+            !open ? "h-[60px] " : "h-[340px] "
+          }`}
+        >
+          <div className=" pt-[143px]">
+            <div className="px-6">
+              {" "}
+              <div className="w-full h-[1px] bg-primary "></div>
+            </div>
+            <p className="text-center py-2 px-5 text-white text-[16px] leading-[21px] clickable mt-4 ">
+              Home
+            </p>
+            <p className="text-center py-2 px-5 text-white text-[16px] leading-[21px] clickable">
+              About
+            </p>
+            <p className="text-center py-2 px-5 text-white text-[16px] leading-[21px] clickable">
+              Service
+            </p>
+            <div className="  mx-[24px] mt-3">
+              <button className="btn-primary bg-white items-center h-fit w-full z justify-center">
+                <img
+                  src="/images/svg/plane.svg"
+                  alt="plane icon"
+                  className="pr-[18px]"
+                />
 
-        <div className="fixed right-4 top-8">
+                <span className="text-primary text-[1rem] pl-[18px] border-l border-[#C4CFE2]">
+                  Contact
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div className={`flex relative -top-[60px]   z-[40]`}>
           <img
-            src="/images/svg/hamburger.svg"
-            alt="burger"
-            className="clickable"
+            src="/images/nav-badges.png"
+            alt="nav"
+            className="h-[153px] flex-grow-0 flex-shrink-0"
           />
+          <img
+            src="/images/nav-line.png"
+            alt="nav"
+            className="h-[153px] w-full "
+          />
+        </div>
+        <div className="">
+          <img
+            src="/images/nav-logo-mob.png"
+            alt="logo"
+            className="fixed z-[100] w-[60px] left-[20px] top-[18px] "
+          />
+          <div className="fixed right-4 top-8 z-[100]">
+            <img
+              src={open ? "/images/svg/close.svg" : "/images/svg/hamburger.svg"}
+              alt="burger"
+              className="clickable"
+              onClick={() => setOpen(!open)}
+            />
+          </div>
         </div>
       </section>
     </>
