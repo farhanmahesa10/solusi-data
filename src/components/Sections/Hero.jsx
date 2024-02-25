@@ -5,6 +5,7 @@ const Hero = () => {
   const [rotate, setRotate] = useState(false);
   return (
     <div
+      id="home"
       style={{ backgroundImage: "url('/images/hero-bg.png')" }}
       className="bg-no-repeat bg-cover"
     >
@@ -25,30 +26,26 @@ const Hero = () => {
               Discover the Possibilities. Achieve Digital Success.
             </span>
           </h1>
-          <div className="flex order-1 lg:order-2 flex-col relative">
-            {/* <img
-              src="/images/hero-thumb-mob.png"
-              alt="img"
-              className="lg:hidden block"
-            /> */}
+          <div className="flex order-1 lg:order-2 flex-col relative mt-[98px] flex-shrink-0 ">
             <img
               src="/images/hero-thumb-purple.png"
               alt="img"
-              className={`hidden lg:block absolute transition-transform duration-[3000ms] left-[60px] -top-[70px]  ${
-                rotate && "rotate-[60deg]"
-              }`}
+              className={` lg:block absolute w-[178px] lg:w-auto transition-transform duration-[3000ms] 
+               left-[180px] lg:left-[60px] -top-[40px] lg:-top-[70px]  ${
+                 rotate && "rotate-[60deg]"
+               }`}
             />
             <img
               src="/images/hero-thumb-blue.png"
               alt="img"
-              className={`hidden lg:block absolute top-[70px] left-[220px] transition-transform duration-[3000ms]  ${
+              className={` lg:block absolute w-[79px] lg:w-auto top-[45px] lg:top-[70px] left-[240px] lg:left-[180px] transition-transform duration-[3000ms]  ${
                 rotate && "rotate-[-60deg]"
               }`}
             />
             <img
               src="/images/hero-thumb.png"
               alt="img"
-              className="hidden lg:block aboluste z-10"
+              className=" lg:block aboluste z-10"
             />
           </div>
         </div>

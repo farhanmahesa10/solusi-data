@@ -3,6 +3,7 @@ import React from "react";
 const About = () => {
   return (
     <div
+      id="about"
       className="wrapper py-[60px] relative  bg-no-repeat bg-[position:20px_500px] md:bg-[position:100px]"
       style={{ backgroundImage: "url('/images/about-bg.png')" }}
     >

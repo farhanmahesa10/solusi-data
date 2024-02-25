@@ -5,6 +5,7 @@ const CTA = () => {
     <div
       className="wrapper bg-no-repeat bg-cover bg-left-top"
       style={{ backgroundImage: "url('/images/cta-bg.png')" }}
+      id="contact"
     >
       <div className="container  bg-left pt-[224px] pb-[206px]">
         <h2 className="text-h2 text-action lg:text-[42px]">

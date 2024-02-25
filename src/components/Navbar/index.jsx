@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -12,26 +13,34 @@ const Navbar = () => {
                 <img src="/images/badge-lg.png" alt="badge" />
               </div>
               <div className="py-[14px] flex gap-3 bg">
-                <p className="py-2 px-4 text-white clickable text-[1rem]">
-                  Home
-                </p>
-                <p className="py-2 px-4 text-white clickable text-[1rem]">
-                  About
-                </p>
-                <p className="py-2 px-4 text-white clickable text-[1rem]">
-                  Service
-                </p>
-                <button className="btn-primary bg-white items-center h-fit ">
-                  <img
-                    src="/images/svg/plane.svg"
-                    alt="plane icon"
-                    className="pr-[18px]"
-                  />
+                <a href="#home">
+                  <p className="py-2 px-4 text-white clickable text-[1rem]">
+                    Home
+                  </p>
+                </a>
+                <a href="#about">
+                  <p className="py-2 px-4 text-white clickable text-[1rem]">
+                    About
+                  </p>
+                </a>
+                <a href="#service">
+                  <p className="py-2 px-4 text-white clickable text-[1rem]">
+                    Service
+                  </p>
+                </a>
+                <a href="#contact">
+                  <button className="btn-primary bg-white items-center h-fit ">
+                    <img
+                      src="/images/svg/plane.svg"
+                      alt="plane icon"
+                      className="pr-[18px]"
+                    />
 
-                  <span className="text-primary text-[1rem] pl-[18px] border-l border-[#C4CFE2]">
-                    Contact
-                  </span>
-                </button>
+                    <span className="text-primary text-[1rem] pl-[18px] border-l border-[#C4CFE2]">
+                      Contact
+                    </span>
+                  </button>
+                </a>
               </div>
             </div>
           </div>
@@ -51,27 +60,35 @@ const Navbar = () => {
               {" "}
               <div className="w-full h-[1px] bg-primary "></div>
             </div>
-            <p className="text-center py-2 px-5 text-white text-[16px] leading-[21px] clickable mt-4 ">
-              Home
-            </p>
-            <p className="text-center py-2 px-5 text-white text-[16px] leading-[21px] clickable">
-              About
-            </p>
-            <p className="text-center py-2 px-5 text-white text-[16px] leading-[21px] clickable">
-              Service
-            </p>
+            <a href="#home" onClick={() => setOpen(false)}>
+              <p className="text-center py-2 px-5 text-white text-[16px] leading-[21px] clickable mt-4 ">
+                Home
+              </p>
+            </a>
+            <a href="#about" onClick={() => setOpen(false)}>
+              <p className="text-center py-2 px-5 text-white text-[16px] leading-[21px] clickable">
+                About
+              </p>
+            </a>
+            <a href="#service" onClick={() => setOpen(false)}>
+              <p className="text-center py-2 px-5 text-white text-[16px] leading-[21px] clickable">
+                Service
+              </p>
+            </a>
             <div className="  mx-[24px] mt-3">
-              <button className="btn-primary bg-white items-center h-fit w-full z justify-center">
-                <img
-                  src="/images/svg/plane.svg"
-                  alt="plane icon"
-                  className="pr-[18px]"
-                />
+              <a href="#contact" onClick={() => setOpen(false)}>
+                <button className="btn-primary bg-white items-center h-fit w-full z justify-center">
+                  <img
+                    src="/images/svg/plane.svg"
+                    alt="plane icon"
+                    className="pr-[18px]"
+                  />
 
-                <span className="text-primary text-[1rem] pl-[18px] border-l border-[#C4CFE2]">
-                  Contact
-                </span>
-              </button>
+                  <span className="text-primary text-[1rem] pl-[18px] border-l border-[#C4CFE2]">
+                    Contact
+                  </span>
+                </button>
+              </a>
             </div>
           </div>
         </div>
