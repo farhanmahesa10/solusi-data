@@ -2,6 +2,7 @@ import React, { useMemo, useState } from "react";
 
 const HowItWorks = () => {
   const [activeDataKey, setActiveDataKey] = useState("5");
+  const [activeBg, setActiveBg] = useState("/images/hiw-bg-5.webp");
 
   const [data, setdata] = useState([
     {
@@ -55,7 +56,7 @@ const HowItWorks = () => {
   return (
     <div
       className="wrapper flex-col md:flex-row bg-cover pt-[50px] md:pt-[147px] pb-[60px] md:pb-[170px] relative md:min-h-[1000px] bg-center transition-all duration-300"
-      style={{ backgroundImage: `url('${activeData?.bg}')` }}
+      style={{ backgroundImage: `url('${activeBg}')` }}
     >
       <div className="absolute top-[-1px] z-10 hidden md:block max-h-[131px] w-full 3xl:hidden">
         <img src="/images/hiw-cutter.png" alt="hiw" />
@@ -80,11 +81,12 @@ const HowItWorks = () => {
                 <div
                   key={r.key}
                   className="flex  md:h-full items-end  px-[8px] py-[9px] md:py-0 md:pb-[170px] w-full
-                   hover:hiw-item-gradient-mob md:hover:hiw-item-gradient transition-all duration-300 ease-in-out
-                   md:hover:border-none hover:border-l-4 hover:border-action
-                   "
+                hover:hiw-item-gradient-mob md:hover:hiw-item-gradient transition-all duration-300 ease-in-out
+                md:hover:border-none hover:border-l-4 hover:border-action
+                "
                   onMouseEnter={() => {
                     setActiveDataKey(r.key);
+                    setActiveBg(r.bg);
                   }}
                 >
                   <div className="opacity-100">
