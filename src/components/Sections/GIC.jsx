@@ -1,10 +1,51 @@
-import React from "react";
-
+import { useFormik } from "formik";
+import React, { useState } from "react";
+import * as Yup from "yup";
+import FormInput from "../Forms/FormInput";
+import toast from "react-hot-toast";
+import axios from "axios";
 const GIC = () => {
+  const [isLoading, setIsLoading] = useState(false);
+
+  const validationSchema = Yup.object().shape({
+    name: Yup.string().required("Name is required!"),
+    email: Yup.string()
+      .email("Email not valid!")
+      .required("Email is required!"),
+    subject: Yup.string().required("Subject is required!"),
+    message: Yup.string().required("Message is required!"),
+  });
+
+  const handleSubmit = async (values, resetForm) => {
+    try {
+      await axios.post("https://app.soldat.ai/api/solusidata/message", values, {
+        headers: { secret: "J>v`E5[)4eYtsfxB3#VQ{z" },
+      });
+      toast.success("Message has been sended!");
+      resetForm();
+    } catch (error) {
+      toast.error("Something went wrong!");
+    }
+  };
+
+  const formik = useFormik({
+    validationSchema,
+    initialValues: {
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    },
+    onSubmit: (values, { resetForm }) => {
+      handleSubmit(values, resetForm);
+    },
+  });
+
   return (
-    <div className="bg-black -z-20 relative">
+    <div className=" relative ">
+      <div className="absolute w-full h-full -z-20 bg-black"></div>
       <div
-        className="wrapper pt-[163px]  bg-gradient-to-t from-black to-white relative -top-[100px] -z-10"
+        className="wrapper pt-[163px]  bg-gradient-to-t from-black to-white relative -top-[100px] z-[5]"
         style={{
           backgroundImage: `linear-gradient(to top, rgba(0,0,0,1), rgba(255,255,255,0)), url('/images/gic-bg.png')`,
         }}
@@ -75,53 +116,51 @@ const GIC = () => {
                 Drop us email for further
               </h2>
 
-              <div className="mt-[24px]">
-                <div className="">
-                  <label className="text-[12px] leading-[16px]">
-                    Your name
-                  </label>
-                  <input
-                    type="text"
+              <form onSubmit={formik.handleSubmit}>
+                <div className="mt-[24px] relative z-30">
+                  <FormInput
+                    formik={formik}
+                    name="name"
+                    label="Your name"
                     placeholder="Name"
-                    className="border 
-                  border-[#FAFAFA] bg-[#FAFAFA] py-4 px-3 text-[14px] leading-[19px] w-full 
-                  focus:outline focus:outline-[#47B2E4] rounded-[4px] focus:bg-[#F5FEFF]"
                   />
+                  <div className="mt-4">
+                    <FormInput
+                      formik={formik}
+                      name="email"
+                      label="Email Address"
+                      placeholder="Email"
+                    />
+                  </div>
+                  <div className="mt-4">
+                    <FormInput
+                      formik={formik}
+                      name="subject"
+                      label="Subject"
+                      placeholder="Subject"
+                    />
+                  </div>
+                  <div className="mt-4">
+                    <FormInput
+                      formik={formik}
+                      name="message"
+                      label="Subject"
+                      rows={4}
+                      control="textarea"
+                      placeholder="Your message"
+                    />
+                  </div>
+
+                  <div className="mt-4">
+                    <button
+                      type={isLoading ? "button" : "submit"}
+                      className="bg-[#01B3BF] text-center py-[14px] rounded-[2px] w-full text-white text-[16px]"
+                    >
+                      Send Message
+                    </button>
+                  </div>
                 </div>
-                <div className="mt-4">
-                  <label className="text-[12px] leading-[16px]">
-                    Email Address
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Email"
-                    className="border 
-                  border-[#FAFAFA] bg-[#FAFAFA] py-4 px-3 text-[14px] leading-[19px] w-full 
-                  focus:outline focus:outline-[#47B2E4] rounded-[4px] focus:bg-[#F5FEFF]"
-                  />
-                </div>
-                <div className="mt-4">
-                  <label className="text-[12px] leading-[16px]">Subject</label>
-                  <input
-                    placeholder="mail subject"
-                    type="text"
-                    className="border 
-                  border-[#FAFAFA] bg-[#FAFAFA] py-4 px-3 text-[14px] leading-[19px] w-full 
-                  focus:outline focus:outline-[#47B2E4] rounded-[4px] focus:bg-[#F5FEFF]"
-                  />
-                </div>
-                <div className="mt-4">
-                  <label className="text-[12px] leading-[16px]">Message</label>
-                  <textarea
-                    rows={5}
-                    type="text"
-                    placeholder="your message"
-                    className="border 
-                  border-[#FAFAFA] bg-[#FAFAFA] py-4 px-3 text-[14px] leading-[19px] w-full 
-                  focus:outline focus:outline-[#47B2E4] rounded-[4px] focus:bg-[#F5FEFF]"
-                  />
-                </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>

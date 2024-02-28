@@ -9,9 +9,11 @@ import {
   Navbar,
   Service,
 } from "./components";
+import { Toaster } from "react-hot-toast";
 function App() {
   return (
     <>
+      <Toaster />
       <Navbar />
       <Hero />
       <About />

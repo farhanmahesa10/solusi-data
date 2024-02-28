@@ -42,24 +42,19 @@ const Service = () => {
             return (
               <div
                 key={`service-${i}`}
-                className={`p-6 bg-no-repeat bg-right ${r.bg && "bg-black"}`}
+                className={`p-6 bg-no-repeat bg-right `}
                 style={{
                   boxShadow: "4px 4px 0px 0px #47B2E4",
-                  backgroundImage: `url('${r.bg}')`,
                 }}
               >
                 <img src={r.icon} alt="icon" className="flex-shrink-0" />
                 <p
-                  className={`${
-                    r.bg && "text-[#DDE6F6]"
-                  } font-bold py-3 text-[18px] lg:text-[22px] text-primary`}
+                  className={` font-bold py-3 text-[18px] lg:text-[22px] text-primary`}
                 >
                   {r.title}
                 </p>
                 <p
-                  className={`${
-                    r.bg && "text-[#9EAABF]"
-                  } text-[15px] lg:text-[17px] text-[#3F4E65] leading-[23px] lg:leading-[20px]`}
+                  className={` text-[15px] lg:text-[17px] text-[#3F4E65] leading-[23px] lg:leading-[20px]`}
                 >
                   {r.desc}
                 </p>

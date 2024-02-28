@@ -68,7 +68,7 @@ const HowItWorks = () => {
           and user-friendly solutions.
         </p>
       </div>
-      <div className="absolute md:bottom-0 z-10 rotate-[180deg] hidden md:block pb-2 bg-white  max-h-[131px] 3xl:hidden">
+      <div className="absolute md:-bottom-[1px] z-10 rotate-[180deg] w-full hidden md:block pb-2  max-h-[131px] 3xl:hidden">
         <img src="/images/hiw-cutter.png" alt="hiw" />
       </div>
 

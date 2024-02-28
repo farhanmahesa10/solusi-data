@@ -3,7 +3,7 @@ import React from "react";
 const CTA = () => {
   return (
     <div
-      className="wrapper bg-no-repeat bg-cover bg-left-top"
+      className="wrapper bg-no-repeat bg-cover bg-left-top relative z-10"
       style={{ backgroundImage: "url('/images/cta-bg.png')" }}
       id="contact"
     >
