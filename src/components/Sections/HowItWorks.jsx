@@ -89,6 +89,12 @@ const HowItWorks = () => {
                     setActiveBg(r.bg);
                   }}
                 >
+                  <div
+                    className="hidden"
+                    style={{ backgroundColor: `url('${r.bg}')` }}
+                  >
+                    {/* trigger load image */}
+                  </div>
                   <div className="opacity-100">
                     <p className="text-white font-bold opacity-100">
                       {r.number}
