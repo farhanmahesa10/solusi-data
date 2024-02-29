@@ -144,7 +144,7 @@ const GIC = () => {
                     <FormInput
                       formik={formik}
                       name="message"
-                      label="Subject"
+                      label="Message"
                       rows={4}
                       control="textarea"
                       placeholder="Your message"
@@ -154,7 +154,7 @@ const GIC = () => {
                   <div className="mt-4">
                     <button
                       type={isLoading ? "button" : "submit"}
-                      className="bg-[#01B3BF] text-center py-[14px] rounded-[2px] w-full text-white text-[16px]"
+                      className="bg-[#01B3BF] text-center clickable py-[14px] rounded-[2px] w-full text-white text-[16px]"
                     >
                       Send Message
                     </button>

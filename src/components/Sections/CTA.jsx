@@ -1,4 +1,5 @@
 import React from "react";
+import ButtonContact from "../Button/ButtonContact";
 
 const CTA = () => {
   return (
@@ -17,17 +18,7 @@ const CTA = () => {
         </p>
 
         <div className="mt-[24px] lg:mt-[44px]">
-          <button className="btn-primary bg-white items-center h-fit px-[24px]">
-            <img
-              src="/images/svg/plane.svg"
-              alt="plane icon"
-              className="pr-[18px]"
-            />
-
-            <span className="text-primary  text-[22px] pl-[18px] border-l border-[#C4CFE2]">
-              Contact
-            </span>
-          </button>
+          <ButtonContact />
         </div>
       </div>
     </div>

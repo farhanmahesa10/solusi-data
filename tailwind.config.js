@@ -6,6 +6,10 @@ module.exports = {
       fontFamily: {
         noto: "'Noto Sans',serif",
       },
+      boxShadow: {
+        btn: "2px 2px 0px 0px #47B2E4",
+        "btn-hover": "4px 5px 0px 0px #47B2E4",
+      },
       screens: {
         sm: "640px",
         // => @media (min-width: 640px) { ... }

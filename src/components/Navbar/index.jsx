@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import ButtonContact from "../Button/ButtonContact";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -29,17 +29,7 @@ const Navbar = () => {
                   </p>
                 </a>
                 <a href="#contact">
-                  <button className="btn-primary bg-white items-center h-fit ">
-                    <img
-                      src="/images/svg/plane.svg"
-                      alt="plane icon"
-                      className="pr-[18px]"
-                    />
-
-                    <span className="text-primary text-[1rem] pl-[18px] border-l border-[#C4CFE2]">
-                      Contact
-                    </span>
-                  </button>
+                  <ButtonContact />
                 </a>
               </div>
             </div>
