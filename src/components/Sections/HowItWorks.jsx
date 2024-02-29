@@ -2,40 +2,39 @@ import React, { useMemo, useState } from "react";
 
 const HowItWorks = () => {
   const [activeDataKey, setActiveDataKey] = useState("5");
-  const [activeBg, setActiveBg] = useState("/images/hiw-bg-5.webp");
 
   const [data, setdata] = useState([
     {
       key: "1",
-      bg: "/images/hiw-bg-1.webp",
+      bg: "https://solusi-data.vercel.app/images/hiw-bg-1.webp",
       number: "01",
       title: "Understand the Client’s Needs",
       desc: "We start by listening to the client’s needs and requirements. We work with the client to define the scope of the project, the desired outcomes, and the timeline for delivery.",
     },
     {
       key: "2",
-      bg: "/images/hiw-bg-2.webp",
+      bg: "https://solusi-data.vercel.app/images/hiw-bg-2.webp",
       number: "02",
       title: "Research the Market",
       desc: "We conduct detailed market research to gain insights into the current trends and technologies in the field. We use this research to develop an understanding of the target audience and to identify potential solutions.",
     },
     {
       key: "3",
-      bg: "/images/hiw-bg-3.webp",
+      bg: "https://solusi-data.vercel.app/images/hiw-bg-3.webp",
       number: "03",
       title: "Develop Solutions",
       desc: "We use our expertise and creative thinking to develop tailor-made solutions that meet the client’s needs. We work with the client to ensure that the proposed solutions are comprehensive and address all aspects of the project.",
     },
     {
       key: "4",
-      bg: "/images/hiw-bg-4.webp",
+      bg: "https://solusi-data.vercel.app/images/hiw-bg-4.webp",
       number: "04",
       title: "Design and Build",
       desc: "We design and build the digital solution to the highest standards. We use the latest technologies and best practices to ensure that the solution is secure, reliable, and user-friendly.",
     },
     {
       key: "5",
-      bg: "/images/hiw-bg-5.webp",
+      bg: "https://solusi-data.vercel.app/images/hiw-bg-5.webp",
       number: "05",
       title: "Test and Refine",
       desc: "We start by listening to the client’s needs and requirements. We work with the client to define the scope of the project, the desired outcomes, and the timeline for delivery.",
@@ -43,7 +42,7 @@ const HowItWorks = () => {
     {
       key: "6",
       number: "06",
-      bg: "/images/hiw-bg-6.webp",
+      bg: "https://solusi-data.vercel.app/images/hiw-bg-6.webp",
       title: "Launch and Support",
       desc: "We launch the digital, We also provide ongoing support.",
     },
@@ -54,14 +53,21 @@ const HowItWorks = () => {
   }, [activeDataKey, data]);
 
   return (
-    <div
-      className="wrapper flex-col md:flex-row bg-cover pt-[50px] md:pt-[147px] pb-[60px] md:pb-[170px] relative md:min-h-[1000px] bg-center transition-all duration-300"
-      style={{ backgroundImage: `url('${activeBg}')` }}
-    >
+    <div className="wrapper flex-col md:flex-row bg-cover  bg-center pt-[50px] md:pt-[147px] pb-[60px] md:pb-[170px] relative md:min-h-[1000px] transition-all duration-300">
+      {data.map((r) => {
+        return (
+          <div
+            className={`w-full h-full absolute -z-10 top-0 bg-cover bg-center ${
+              activeDataKey !== r.key && "invisible"
+            }`}
+            style={{ backgroundImage: `url('${r.bg}')` }}
+          ></div>
+        );
+      })}
       <div className="absolute top-[-1px] z-10 hidden md:block max-h-[131px] w-full 3xl:hidden">
         <img src="/images/hiw-cutter.png" alt="hiw" />
       </div>
-      <div className="container ">
+      <div className="container relative">
         <h2 className="text-center text-h2 text-white">How We Work</h2>
         <p className="text-18-to-24 text-center text-[#F5F5F5CC]">
           Solusi Data provides exceptional digital solutions, utilizing
@@ -86,7 +92,6 @@ const HowItWorks = () => {
                 "
                   onMouseEnter={() => {
                     setActiveDataKey(r.key);
-                    setActiveBg(r.bg);
                   }}
                 >
                   <div
